@@ -43,6 +43,7 @@ def account_handle(tsk='login'):
             session.update("uid", uid)
             session.update("fullname", fullname)
             return True
+messages_ids = []
 while True:
     session = Session()
     if session.get("isLogged"):
@@ -115,6 +116,7 @@ while True:
                 if result[1] == receiver_id and result[2] == myuid:
                     from_name = receiver_name
                     to_name = myname
+                messages_ids.append(int(result[0]))
                 print("""
     [{}
         From: {}
@@ -122,7 +124,6 @@ while True:
     ]
     {}{}
         """.format(Fore.BLUE, from_name, to_name, Fore.GREEN, result[3]))
-                value = int(result[4]) + 1
                 cursor.execute("UPDATE `messages` SET `isnew`='no' WHERE `ID`='{}'".format(result[0]))
                 mydb.commit()
             cursor.close()
@@ -140,12 +141,13 @@ while True:
                     """)
                     input("")
                     os.system("cls")
-                    # mydb, cursor = database()
+                    messages_ids.clear()
                     receiver_id = session.get("messagewith_id")
                     receiver_name = session.get("messagewith_name")
                 cursor.execute("SELECT * FROM `messages` WHERE `from_id`='{}' AND `to_id`='{}' OR `from_id`='{}' AND `to_id`='{}'".format(myuid, receiver_id, receiver_id, myuid))
                 for result in cursor.fetchall():
-                    if result[4] == 'yes':
+                    if int(result[0]) not in messages_ids:
+                        messages_ids.append(int(result[0]))
                         from_name = myname
                         to_name = receiver_name
                         if result[1] == receiver_id and result[2] == myuid:
