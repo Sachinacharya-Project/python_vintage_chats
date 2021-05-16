@@ -39,10 +39,10 @@ def database():
     """
     mydb = connector.connect(
         host = "sql6.freemysqlhosting.net",
-        user = "sql6411247",
-        passwd = "5Irt4txM2r",
+        user = "sql6412782",
+        passwd = "8aWUh4VNHs",
         port = "3306",
-        database = "sql6411247"
+        database = "sql6412782"
     )
     cursor = mydb.cursor()
     return mydb, cursor
