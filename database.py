@@ -55,7 +55,6 @@ def userassign():
     if len(result) > 0:
         uid = result[0][0]
         fullname = result[0][1]
-        print(result)
         session.update("messagewith_id", uid)
         session.update("messagewith_name", fullname)
         return True
