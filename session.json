@@ -1,8 +1,8 @@
 {
-    "isLogged": "False",
-    "uid": "None",
-    "fullname": "None",
-    "messagewith_id": "None",
-    "messagewith_name": "None",
+    "isLogged": "True",
+    "uid": "2",
+    "fullname": "Sachin Acharya",
+    "messagewith_id": "1",
+    "messagewith_name": "ram",
     "close": "False"
 }
