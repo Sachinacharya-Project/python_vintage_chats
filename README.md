@@ -1,7 +1,7 @@
 # Python Vintage Chats
 ______________________________________________
 This is a Live-Chat enabled Chatting application which use no UI/UX whatsoever.
-This tends provide the vibes of Old Fashion Computer's Chatting system.
+This tends to provide the vibes of Old Fashion Computer's Chatting system.
 ## Requirements and Modules
 1. You can explicitly Install all the modules required using following command
 ````python
