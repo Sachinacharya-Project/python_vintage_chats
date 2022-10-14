@@ -7,7 +7,14 @@ class Session:
         self.init(file)
     def init(self, file='session.json'):
         self.asked_file = file
-        self.file = open(file, 'r+')
+        self.file = None
+        if not os.path.exists(self.asked_file):
+            self.file = open(file, "w+")
+            self.file.seek(0)
+            self.file.truncate()
+            self.file.write("{}")
+        else:
+            self.file = open(file, "r+")
         self.array = json.load(self.file)
     def update(self, key, value):
         self.array[key] = str(value)
@@ -38,11 +45,11 @@ def database():
     Returns database handle and cursor instance
     """
     mydb = connector.connect(
-        host = "sql6.freemysqlhosting.net",
-        user = "sql6412782",
-        passwd = "8aWUh4VNHs",
+        host = "localhost", # "sql6.freemysqlhosting.net",
+        user = "root", # "sql6412782",
+        passwd = "", # "8aWUh4VNHs",
         port = "3306",
-        database = "sql6412782"
+        database = "sql6415417"
     )
     cursor = mydb.cursor()
     return mydb, cursor

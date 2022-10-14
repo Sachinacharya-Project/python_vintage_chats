@@ -140,7 +140,7 @@ while True:
                     Clearing Screen
                     """)
                     input("")
-                    os.system("cls")
+                    os.system("cls | clear")
                     messages_ids.clear()
                     receiver_id = session.get("messagewith_id")
                     receiver_name = session.get("messagewith_name")
