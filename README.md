@@ -1,6 +1,6 @@
 # Python Vintage Chats
 ______________________________________________
-This is a Live Chatting application that has no UI/UX whatsoever. We can send and receive messages from the terminal asynchronously, meaning the `sending` and `receiving` processes perform asynchronously with each other. We can send message and at the same time also receive messages without user interaction. 
+This is a Live Chatting application that has no UI/UX whatsoever. We can send and receive messages from the terminal, meaning the `sending` and `receiving` processes are performed simulataneously. We can send message and at the same time also receive messages without user interaction. 
 
 ## Requirements and Modules
 1. You can explicitly Install all the modules required using the following command
@@ -23,5 +23,5 @@ Then we can log in.
 
 This Chat.py file shows all the messages so far with the user you will choose in Sender.py File
 Once all the processes asked have been done, You can now execute the Sender.py file
-This is used to send messages to respective users.
+This is used to send messages to respective users.  
 ->menu for Menus

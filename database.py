@@ -1,6 +1,8 @@
 from mysql import connector
 from colorama import init, Fore
 import json
+import os
+
 init(autoreset=True)
 class Session:
     def __init__(self, file='session.json'):
@@ -12,7 +14,9 @@ class Session:
             self.file = open(file, "w+")
             self.file.seek(0)
             self.file.truncate()
-            self.file.write("{}")
+            json.dump([{
+                'session': "active"
+            }], self.file, indent=4)
         else:
             self.file = open(file, "r+")
         self.array = json.load(self.file)
